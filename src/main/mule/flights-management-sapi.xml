@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+
+	<flow
+		name="get-flights"
+		doc:id="81cf2681-3a59-4526-8c24-9c1b4f0fface">
+		<http:listener doc:name="Listener" doc:id="25c9a3e3-7cce-4ec7-9d51-1be0ba963e4f" config-ref="HTTP_Listener_config" path="/flights"/>
+		<set-payload value="#['Retrieving all flights...']" doc:name="Set Payload" doc:id="f30c0780-d2a2-413e-88df-a152c5accfb6" />
+	</flow>
+
+</mule>
